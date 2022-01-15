@@ -47,20 +47,20 @@ for (var pixel of someImage.values()) {
 print(image);
 
 // 5
-var image = new SimpleImage("chapel.png");
+var someImage = new SimpleImage("chapel.png");
 
 // missing code
+
 for (var pixel of someImage.values()) {
-    if (pixel.getX() < 50) {
-        if (pixel.getY() < 50) {
+    if (pixel.getY() < 50) {
+        if (pixel.getX() < 50) {
             pixel.setRed(0);
             pixel.setGreen(255);
             pixel.setBlue(0);
         }
     }
 }
-
-print(image);
+print(someImage);
 
 
 
@@ -110,4 +110,27 @@ print(result3);
 
 
 
-// 
+// Q8
+function changeRed(width, height) {
+    var picture = new SimpleImage(width, height);
+    var red = 0;
+
+     // missing code
+     for (var pixel of picture.values()) {
+        pixel.setRed(red);
+        pixel.setGreen(0);
+        pixel.setBlue(0);
+        if (pixel.getRed() == 255) {
+            red = 0;
+        }
+        if (pixel.getRed() != 255) {
+            red = red + 1;
+        }
+    }
+
+    return picture;
+}
+
+var result = changeRed(256,200);
+print(result);
+
